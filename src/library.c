@@ -18,7 +18,7 @@ void displayLibrary(const struct Library *library, const struct DisplaySettings 
 }
 
 // Add books to the library
-void addBooksToLibrary(struct Library *library, int hidePrompts) {
+int addBooksToLibrary(struct Library *library, int hidePrompts) {
     for (int i = 0; i < library->numBooks; i++) {
         if(hidePrompts != 1) {
             printf("\nEnter details for book %d.\n", i + 1);
@@ -39,7 +39,7 @@ void addBooksToLibrary(struct Library *library, int hidePrompts) {
             if(hidePrompts != 1) {
                 printTemplate("Library is full. Cannot add more books."); 
             }
-            break;
+            return 0; 
         }
     }
     
@@ -48,6 +48,8 @@ void addBooksToLibrary(struct Library *library, int hidePrompts) {
     } else {
         printTemplate("Library is full. Cannot add more books.");
     }
+
+    return 1;
 }
 
 // Perform user action to initialize the library
@@ -66,6 +68,13 @@ void performUserAction(struct Library *library, int *programRunning) {
         hidePrompts = 0;
         initializeLibrary(library, hidePrompts);
         addBooksToLibrary(library, hidePrompts);
+
+        if (!addBooksToLibrary(library, hidePrompts)) {
+            *programRunning = 0; 
+            printTemplate("Error: Unable to add books to the library.");
+        } else {
+            *programRunning = 1;
+        }
         break;
     case U_IMPORT_BOOKS:
         hidePrompts = 1;
@@ -95,7 +104,7 @@ void performUserAction(struct Library *library, int *programRunning) {
             perror("Error reopening stdin");
             return;
         }
-        // *stopProgram = 1;
+        *programRunning = 1;
         break;
     default:
         *programRunning = 0;

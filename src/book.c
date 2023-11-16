@@ -36,7 +36,7 @@ void initializeBook(struct Book *book, int hidePrompts) {
 
     // Prompt readers for review
     if(hidePrompts != 1) {
-        printTemplate("Book Reviews\nRate from 0 to 5 - story, characters, writing style");
+        printTemplate("Book Reviews\n  Rate from 0 to 5 - story, characters, writing style");
     }
 
     int tempReader = 1;

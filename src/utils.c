@@ -11,13 +11,13 @@ void printTemplate(const char *content) {
     int border_width = 35;
 
     // Print the top border
-    printf("\n%s\n", "-------");
+    printf("\n%s\n", "|--------------");
 
     // Print the content with a left margin
-    printf("%s%s%s\n", "|", "   ", content);
+    printf("%s%s\n", "  ",content);
 
     // Print the bottom border
-    printf("%s\n\n", "-------");
+    printf("%s\n\n", "|--------------");
 }
 
 // Set default display settings
