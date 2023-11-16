@@ -18,7 +18,7 @@ struct DisplaySettings;
 // Function Declarations
 // ===================
 void initializeLibrary(struct Library *library, int hidePrompts);
-void addBooksToLibrary(struct Library *library, int hidePrompts);
+int addBooksToLibrary(struct Library *library, int hidePrompts);
 void displayLibrary(const struct Library *library, const struct DisplaySettings *settings);
 void performUserAction(struct Library *library, int *programRunning);
 void performLibraryActions(struct Library *library);
