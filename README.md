@@ -1,6 +1,9 @@
 # Library Management System
 
-# Table of Contents
+**Note:**
+This project serves as a faculty project and can be further developed and enhanced based on specific requirements.
+
+## Table of Contents
 1. [Library Management System](#library-management-system)
    - [Introduction](#introduction)
    - [Building and Running](#building-and-running)
@@ -296,6 +299,3 @@ Paranormal
 ## Conclusion
 
 This documentation provides a comprehensive overview of the project structure, explaining the purpose of each file and offering clear instructions on how to compile and run the program. Users can seamlessly interact with the system through the command line, facilitating efficient management of a library of books.
-
-**Note:**
-This project serves as a faculty project and can be further developed and enhanced based on specific requirements. Students and developers are encouraged to explore additional features and improvements to deepen their understanding of software development practices.
